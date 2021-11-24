@@ -1,11 +1,13 @@
 /*
- * This is an example of a Rust smart contract with two simple, symmetric functions:
+ * This is an example of a Rust smart contract with 3 simple, symmetric functions:
  *
  * 1. set_greeting: accepts a greeting, such as "howdy", and records it for the user (account_id)
  *    who sent the request
  * 2. get_greeting: accepts an account_id and returns the greeting saved for it, defaulting to
  *    "Hello"
- *
+ * 3. info_hello: accepts a name and returns a greeting and block number, block timestamp, account balance,
+      and the number of times that the contract has been called.
+      
  * Learn more about writing NEAR smart contracts with Rust:
  * https://github.com/near/near-sdk-rs
  *
@@ -62,11 +64,12 @@ impl Welcome {
         }
     }
 
-   
-
-    
-
-    
+    /*
+ * 
+ * The info_hello function I wrote 
+ *
+ */
+     
     pub fn info_hello(&mut self, name: String) -> String {
         let account_balance = env::account_balance();
         self.val += 1;
